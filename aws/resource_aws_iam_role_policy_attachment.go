@@ -16,6 +16,9 @@ func resourceAwsIamRolePolicyAttachment() *schema.Resource {
 		Create: resourceAwsIamRolePolicyAttachmentCreate,
 		Read:   resourceAwsIamRolePolicyAttachmentRead,
 		Delete: resourceAwsIamRolePolicyAttachmentDelete,
+		Importer: &schema.ResourceImporter{
+			State: resourceAwsIamRolePolicyAttachmentImport,
+		},
 
 		Schema: map[string]*schema.Schema{
 			"role": &schema.Schema{
